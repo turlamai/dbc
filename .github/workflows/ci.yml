@@ -8,11 +8,11 @@ on:
 permissions:
   contents: read
 
-# Do not duplicate branch-push and PR builds. Cancel only superseded
-# runs for the same event and PR (or branch), never unrelated work.
+# Preserve required evidence for each main commit, including queued jobs.
+# Cancel only superseded checks on the same PR; never a main push run.
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
