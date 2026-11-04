@@ -88,7 +88,7 @@ current switch value appear in a decode result.
 The [Scribble API manual](dbc/scribblings/dbc.scrbl) describes the entry
 model, lossless serialization, Intel/Motorola bit layouts, scaled signal
 encoding and choice tables (unscaled integer DriveMode); its synthetic CAN DBC example is evaluated during
-documentation generation. A separate [executable quickstart](examples/quickstart.rkt)
+documentation generation. A separate [executable quickstart](dbc/examples/quickstart.rkt)
 checks message lookup, frame encoding/decoding, VAL_ choices and DBC
 serialization without hardware, file downloads or proprietary databases.
 
@@ -97,7 +97,7 @@ From a local checkout (Racket installed):
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p dbc
-racket examples/quickstart.rkt
+racket dbc/examples/quickstart.rkt
 raco setup --check-pkg-deps -l dbc
 ```
 

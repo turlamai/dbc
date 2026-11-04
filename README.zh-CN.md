@@ -66,7 +66,7 @@ DBC
 [完整 Scribble API 文档](dbc/scribblings/dbc.scrbl)说明条目模型、
 无损序列化、Intel/Motorola 位布局、信号缩放和枚举表；
 手册中的合成 CAN DBC 示例会在文档构建时执行。
-[独立 quickstart](examples/quickstart.rkt)检查消息查找、
+[独立 quickstart](dbc/examples/quickstart.rkt)检查消息查找、
 CAN 帧编解码、未缩放 DriveMode 的 VAL_ 选项值与 DBC 序列化，不依赖 CAN 硬件、
 外部文件或专有数据。
 
@@ -75,7 +75,7 @@ CAN 帧编解码、未缩放 DriveMode 的 VAL_ 选项值与 DBC 序列化，不
 ```sh
 raco pkg install --auto --link "$(pwd)"
 raco test -p dbc
-racket examples/quickstart.rkt
+racket dbc/examples/quickstart.rkt
 raco setup --check-pkg-deps -l dbc
 ```
 
